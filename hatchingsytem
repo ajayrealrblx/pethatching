@@ -1,0 +1,18 @@
+-- ModuleScript in ReplicatedStorage
+local PickupManager = {}
+
+local defaultMultiplier = 1.25
+local rarityMultipliers = {
+  common = 100,
+  uncommon = 20,
+  rare = 50,
+  legendary = 2,
+}
+
+-- Add the getPickupBonus function to the PickupManager module table
+function PickupManager.getPickupBonus(rarity)
+  local bonus = rarityMultipliers[rarity] * defaultMultiplier
+  return bonus
+end
+
+return PickupManager
